@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dnrul7hgn215e"]
+
+[ext_resource type="Script" uid="uid://c0su36asjj2go" path="res://scripts/spike.gd" id="1_7a7y0"]
+[ext_resource type="Texture2D" uid="uid://bpox2imdknybh" path="res://assets/sprites/items/traps/Idle.png" id="1_ljd5v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmmqq"]
+size = Vector2(15, 7)
+
+[node name="Spike" type="Area2D" unique_id=754400640]
+scale = Vector2(2, 2)
+collision_mask = 2
+script = ExtResource("1_7a7y0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1924091570]
+texture = ExtResource("1_ljd5v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2076403354]
+position = Vector2(-0.5, 4.5)
+shape = SubResource("RectangleShape2D_mmmqq")
+
+[node name="Timer" type="Timer" parent="." unique_id=434282492]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

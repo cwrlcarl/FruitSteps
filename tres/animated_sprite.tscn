@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dc4e7ykuyb46r"]
+
+[ext_resource type="SpriteFrames" uid="uid://b057xr56xsajq" path="res://tres/pink_man.tres" id="1_fgyil"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1593295407]
+sprite_frames = ExtResource("1_fgyil")
+animation = &"run"
+autoplay = "idle"
