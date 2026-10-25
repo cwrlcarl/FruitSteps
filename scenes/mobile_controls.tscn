@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://hb3syl50j8r4"]
+
+[ext_resource type="Texture2D" uid="uid://rhlrwywedljw" path="res://assets/ui/direction_left2.png" id="1_5yoks"]
+[ext_resource type="Texture2D" uid="uid://bbmtu12lr32or" path="res://assets/ui/direction_right2.png" id="2_4rjyr"]
+[ext_resource type="Texture2D" uid="uid://l8r4j1m3lo5b" path="res://assets/ui/button_bean2.png" id="3_y1te1"]
+
+[node name="MobileControls" type="CanvasLayer" unique_id=2032883719]
+
+[node name="LeftButton" type="TouchScreenButton" parent="." unique_id=2105543739]
+position = Vector2(80, 584)
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("1_5yoks")
+action = "left"
+visibility_mode = 1
+
+[node name="RightButton" type="TouchScreenButton" parent="." unique_id=1761478419]
+position = Vector2(222, 584)
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("2_4rjyr")
+action = "right"
+visibility_mode = 1
+
+[node name="JumpButton" type="TouchScreenButton" parent="." unique_id=243827982]
+position = Vector2(1123, 598)
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("3_y1te1")
+action = "jump"
+visibility_mode = 1
