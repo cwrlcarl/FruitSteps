@@ -11,12 +11,18 @@ const JUMP_VELOCITY = -700.0
 @onready var die_sfx: AudioStreamPlayer2D = $DieSFX
 
 var alive := true
+var finish := false
+
 
 func _physics_process(delta: float) -> void:
 	if not alive:
 		velocity += get_gravity() * delta
 		rotation -= 2 * delta
 		move_and_slide()
+		return
+		
+	if finish:
+		velocity = Vector2.ZERO
 		return
 		
 	if not is_on_floor():
@@ -53,6 +59,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+
 func die() -> void:
 	alive = false
 	animated_sprite.play("hit")
@@ -67,8 +74,9 @@ func add_point() -> void:
 	print("+1 Fruit!")
 	
 	
-func finish() -> void:
-	print("Finished!")
+func complete_level() -> void:
+	finish = true
+	animated_sprite.play("disappear")
 
 	
 	
